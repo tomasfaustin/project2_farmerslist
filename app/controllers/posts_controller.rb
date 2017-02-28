@@ -2,35 +2,30 @@ class PostsController < ApplicationController
   before_action :set_posts, only: [:show, :edit, :update, :destroy]
 
   def index
-    @posts = User.all
+    @posts = Post.all
   end
 
   def show
-    @posts = User.find(params[:id])
+    @post = Post.find(params[:id])
   end
 
   def new
-    @posts = User.new
+    @post = Post.new
   end
 
   def create
-    @posts = User.new(posts_params)
-
-    if @posts.save
+    @post = Post.new(post_params)
+    @post.user = current_user
+    if @post.save
     redirect_to posts_path
     else
     render :new
+    end
   end
-end
-
-def edit
-  @posts = User.find(params[:id])
-end
 
 def update
-  @posts = User.find(params[:id])
-
-  if @posts.update_attributes(posts_params)
+  @post = Post.find(params[:id])
+  if @post.update_attributes(post_params)
     redirect_to posts_path
   else
     render :edit
@@ -38,14 +33,13 @@ def update
 end
 
 def destroy
-  @posts = User.find(params[:id])
-  @posts.destroy
-  redirect_to posts_path
+  @post = Post.find(params[:id])
+  @post.destroy
 end
 
 private
-def posts_params
-  params.require(:posts).permit(:name, :email, :password, :password_confirmation)
+def post_params
+  params.require(:post).permit(:user_id, :title, :message, :organic, :location)
 end
 
 end

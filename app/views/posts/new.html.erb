@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>farmerslist current offerings</title>
+  </head>
+  <body>
+    <div>
+      <div>
+        <%= form_for @post do |f| %>
+        <%= f.label :title %>
+        <%= f.text_field :title %>
+
+        <%= f.label :message %>
+        <%= f.text_area :message %>
+
+        <%= f.label :organic %>
+        <%= f.text_field :organic %>
+
+        <%= f.label :location %>
+        <%= f.text_field :location %>
+
+        <%= f.submit "make new post" %>
+        <% end %>
+      </div>
+   </div>
+   </body>
+</html>

@@ -1,14 +1,29 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>FarmersList</title>
-    <%= csrf_meta_tags %>
+    <head>
+        <title>farmerslist</title>
+        <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    </head>
 
-  <body>
-    <%= yield %>
-  </body>
+    <body>
+
+      <% if current_user %>
+      <%= "logged in as #{current_user.email}" %> | <%= link_to 'Home', root_path %> | <%= link_to 'Log Out', logout_path, method: :delete %>
+      <% else %>
+
+      <%= link_to 'home', root_path %> | <%= link_to 'log in', login_path %> or <%= link_to 'sign up', new_user_path %>
+      <% end %>
+    <hr>
+        <% if notice %>
+        <%= notice %>
+        <% end %>
+
+        <% if alert %>
+        <%= alert %>
+        <% end %>
+        <%= yield %>
+    </body>
 </html>
