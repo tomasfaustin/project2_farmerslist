@@ -1,20 +1,14 @@
 <h1><%= @post.title %></h1>
+    <%= image_tag @post.image.url %>
+<h5>Posted <%= time_ago_in_words(@post.created_at) %> ago.</h5>
 
-<%= form_for @post do |f| %> 
+<%= form_for @post do |f| %>
 
+<h1> <%= @post.message %></h1>
 
-    <div>
-        <%= f.label :message %>
-        <%= f.text_area :message %>
-    </div>
-    <div>
-        <%= f.label :organic %>
-        <%= f.text_field :organic %>
-    </div>
-    <div>
-        <%= f.label :location %>
-        <%= f.text_field :location %>
-    </div>
+<h1>is it organic? <%= @post.organic %></h1>
+
+<h1>location: <%= @post.location %></h1>
 
 <% end %>
 <br>
