@@ -4,11 +4,13 @@
 
 ##INTRODUCTION
 
-Do you know where your food comes from? If you don't, you should!
+Do you know where your food comes from?
 
-**FARMERSLIST** connects farmers growing organic and sustainable products with customers who can't get to the farmers markets or want to level up from the grocery store.
+**farmerslist®** connects farmers with customers who want to learn more about their local food supply.
 
-**FARMERSLIST** allows the good folks growing food to post on a public forum in a way that let's their community know what's available, for how much, and where they can find it.
+We encourage everyone to get out and visit the places where food is produced and interact with the good folks growing it.
+
+Your community can use **farmerslist®** to find out what's available, when, where, and for how much. The rest is up to you.
 
 Just remember, everything is negotiable, so haggle away!
 
@@ -24,7 +26,7 @@ Just remember, everything is negotiable, so haggle away!
 
 ##APPROACH
 
-I created two models--one for Users and one for Posts--that contain all of the information necessary to liaise between farmers and consumers. These models manage my data and databases. 
+I created two models--one for Users and one for Posts--that contain all of the information necessary to liaise between farmers and consumers. These models manage my data and databases.
 
 
 ##TRELLO PAGE
@@ -33,11 +35,13 @@ I created two models--one for Users and one for Posts--that contain all of the i
 
 ##UNSOLVED PROBLEMS
 
+I would like to eventually include functionality for a relayed email system similar to the one in place on craigslist.
+
 ##INSTALLATION INSTRUCTIONS
 
 Click on [this link](https://github.com/tomasfaustin/project2_farmerslist) to navigate to my Github repository.
 
-<!-- In the top right corner there's a green button that reads "Clone or download." Click on "Download ZIP."
+In the top right corner there's a green button that reads "Clone or download." Click on "Download ZIP."
 
 Run the downloaded zip file and navigate to the resulting folder in Terminal. If you downloaded the file to your "Download" folder, the terminal command will most likely be 'cd Downloads/project2_farmerslist/'.
 
@@ -53,11 +57,11 @@ Run the following commands in Terminal:
 
 *rails s (launches server)
 
-*Open Chrome and navigate to 'localhost:3000' which will take you to the login portal for the site. -->
+*Open Chrome and navigate to 'localhost:3000' which will take you to the login portal for the site.
 
 ##MVP
 
-A Fully Functional CRUD Application that allows users to create an account, add posts to the public forum, remove or revise their posts from the forum, and delete their account.
+A Fully Functional CRUD Application that allows users to create an account, add posts to the public forum, and remove or revise their posts from the forum.
 
 
 
