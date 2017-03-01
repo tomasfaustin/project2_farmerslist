@@ -1,6 +1,11 @@
-<h1>Users</h1>
+<h1>if these great people are involved, shouldn't you be?!</h1>
+<hr>
 <ul>
-  <% @users.each do |user| %>
-    <li><%= user.email %></li>
-  <% end %>
+    <% @users.each do |user| %>
+        <li>
+            <strong> <%= user.email %> </strong> -
+            ...<%= link_to "delete this user", user, method: :delete, data: { confirm: "Are you sure you want to delete this user?"} %>
+            <%= link_to "create a new user", new_user_path %>
+        </li>
+    <% end %>
 </ul>

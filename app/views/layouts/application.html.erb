@@ -8,7 +8,7 @@
         <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     </head>
 
-    <body>
+  <h2><body>
 
       <% if current_user %>
       <%= "logged in as #{current_user.email}" %> | <%= link_to 'Home', root_path %> | <%= link_to 'Log Out', logout_path, method: :delete %>
@@ -24,6 +24,9 @@
         <% if alert %>
         <%= alert %>
         <% end %>
+        <%= render 'partials/nav' %>
+        <div class="container">
         <%= yield %>
-    </body>
+        </div>
+    </body></h2>
 </html>

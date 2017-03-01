@@ -1,0 +1,26 @@
+<h1>edit this post</h1>
+
+<%= form_for @post do |f| %>
+
+    <div>
+        <%= f.label :title %>
+        <%= f.text_area :title %>
+    </div>
+    <div>
+        <%= f.label :message %>
+        <%= f.text_area :message %>
+    </div>
+    <div>
+        <%= f.label :organic %>
+        <%= f.text_area :organic %>
+    </div>
+    <div>
+        <%= f.label :location %>
+        <%= f.text_area :location %>
+    </div>
+
+    <%= f.submit "change this post now" %>
+
+<% end %>
+
+<%= link_to "back to farmerlist", posts_path %>

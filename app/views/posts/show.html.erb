@@ -1,0 +1,21 @@
+<h1><%= @post.title %></h1>
+
+<%= form_for @post do |f| %> 
+
+
+    <div>
+        <%= f.label :message %>
+        <%= f.text_area :message %>
+    </div>
+    <div>
+        <%= f.label :organic %>
+        <%= f.text_field :organic %>
+    </div>
+    <div>
+        <%= f.label :location %>
+        <%= f.text_field :location %>
+    </div>
+
+<% end %>
+<br>
+<%= link_to "back to farmerlist", posts_path %>
