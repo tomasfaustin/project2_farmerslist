@@ -13,25 +13,25 @@
 # end
 
 # Giving the faker gem a shot here
-
+if !User.find_by(email: "example@gmail.com")
 User.create!(email: "example@gmail.com",
              password:              "foobar",
-             password_confirmation: "foobar",
-             activated: true,
-             activated_at: Time.zone.now)
+             password_confirmation: "foobar")
+
+end
 
 30.times do |n|
   name  = Faker::Internet.free_email
   email = "example-#{n+1}@gmail.com"
   password = "password"
-  User.create!(name:  name,
+  User.create!(
               email: email,
               password:              password,
-              password_confirmation: password,
-              activated: true,
-              activated_at: Time.zone.now)
+              password_confirmation: password)
+
 end
 
+# What is syntax to add in custom terms like "Grass-Fed, pastured, sustainably-raise, organic, etc?"
 users = User.order(:created_at).take(6)
 30.times do
   message = Faker::Hipster.paragraph
