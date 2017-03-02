@@ -1,14 +1,24 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   before_action :authorize, except: [:index, :show]
-
-  # def search
-  #   @results = Post.where("title ILIKE ?", "%#{'carrots'}%")
+# Search bar shit
+  # def self.search(search)
+  # where("title ILIKE ? OR message ILIKE ? OR location ILIKE ?", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
   # end
 
   def index
     @posts = Post.all
   end
+  # Search bar shit
+
+#   def index
+#   @recipes = Recipe.all
+#   if params[:search]
+#     @recipes = Recipe.search(params[:search]).order("created_at DESC")
+#   else
+#     @recipes = Recipe.all.order("created_at DESC")
+#   end
+# end
 
   def show
     @post = Post.find(params[:id])
