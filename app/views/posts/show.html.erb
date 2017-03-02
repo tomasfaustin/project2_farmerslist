@@ -5,7 +5,7 @@
 
 <h1> <%= @post.message %></h1>
 
-<h1>is it organic? <%= @post.organic %></h1>
+<h1>organic? <%= @post.organic %></h1>
 
 <h1>location: <%= @post.location %></h1>
 
@@ -15,5 +15,4 @@
 <br>
 <%= link_to "**edit this post", edit_post_path(@post) %>
 <% end %>
-<br>
 <%= link_to "back to farmerlist", posts_path %>
