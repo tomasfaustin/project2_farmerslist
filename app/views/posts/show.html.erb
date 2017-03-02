@@ -1,18 +1,18 @@
-<h1><%= @post.title %></h1>
+<h1><%= "#{@post.title} - #{@post.price}" %></h1>
     <%= image_tag @post.image.url(:medium) %>
-<h5>Posted <%= time_ago_in_words(@post.created_at) %> ago.</h5>
+<h4>Posted <%= time_ago_in_words(@post.created_at) %> ago.</h4>
 
 
 <h1> <%= @post.message %></h1>
-
-<h1>organic? <%= @post.organic %></h1>
-
-<h1>location: <%= @post.location %></h1>
-
+<h3> <%= "#{@post.phone}" %></h3>
+<h3>organic? <%= @post.organic %></h3>
+<h3>location: <%= @post.location %></h3>
 
 <% if current_user == @post.user %>
+<h3>
 <%= link_to "**delete this post", @post, method: :delete, data: { confirm: "are you sure you want to delete this post?"} %>
-<br>
 <%= link_to "**edit this post", edit_post_path(@post) %>
+<br>
 <% end %>
-<%= link_to "back to farmerlist", posts_path %>
+<br>
+<strong><%= link_to "back to farmerslist®", posts_path %></strong></h3>

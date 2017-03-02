@@ -7,7 +7,7 @@ class PostsController < ApplicationController
   # end
 
   def index
-    @posts = Post.all
+    @posts = Post.all.order("created_at DESC")
   end
   # Search bar shit
 
@@ -29,7 +29,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(params.require(:post).permit(:user_id, :title, :message, :organic, :location, :image))
+    @post = Post.new(params.require(:post).permit(:user_id, :title, :message, :organic, :location, :image, :price, :phone))
     @post.user = current_user
     if @post.save
     redirect_to posts_path
@@ -61,7 +61,7 @@ end
 
 private
 def post_params
-  params.require(:post).permit(:user_id, :title, :message, :organic, :location, :image)
+  params.require(:post).permit(:user_id, :title, :message, :organic, :location, :image, :price, :phone)
 end
 
 def set_post

@@ -13,6 +13,11 @@
     </div>
 <br>
     <div>
+      <%= f.label :price %>
+      <%= f.text_field :price %>
+    </div>
+<br>
+    <div>
       <%= f.label :organic? %>
       <%= f.text_field :organic %>
     </div>
@@ -22,10 +27,15 @@
       <%= f.text_field :location %>
     </div>
 <br>
-  <h4><div>
+    <div>
+      <%= f.label :phone %>
+      <%= f.text_field :phone %>
+    </div>
+    <br>
+  <h3><div>
       <%= f.label :image %>
       <%= f.file_field :image %>
-    </div></h4>
+    </div></h3>
 <br>
     <%= f.submit "add new post!" %>
 
