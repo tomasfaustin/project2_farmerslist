@@ -1,24 +1,16 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
-  before_action :authorize, except: [:index, :show]
-# Search bar shit
-  # def self.search(search)
-  # where("title ILIKE ? OR message ILIKE ? OR location ILIKE ?", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
-  # end
+  before_action :authorize, except: [:index, :show, :search]
 
   def index
     @posts = Post.all.order("created_at DESC")
   end
-  # Search bar shit
 
-#   def index
-#   @recipes = Recipe.all
-#   if params[:search]
-#     @recipes = Recipe.search(params[:search]).order("created_at DESC")
-#   else
-#     @recipes = Recipe.all.order("created_at DESC")
-#   end
-# end
+# This allows for the search functionality in the nav bar
+  def search
+  @posts = Post.where("title ILIKE ? OR message ILIKE ? OR location ILIKE ?", "%#{params[:search]}%", "%#{params[:search]}%", "%#{params[:search]}%")
+    render 'index'
+  end
 
   def show
     @post = Post.find(params[:id])
