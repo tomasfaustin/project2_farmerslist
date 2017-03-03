@@ -2,12 +2,13 @@
 <%= form_for :login do |f| %>
   <div>
     <%= f.label :email %>
-    <%= f.text_field :email, autofocus: true %>
+    <%= f.text_field :email, class: 'form-control', autofocus: true %>
   </div>
   <div>
     <%= f.label :password %>
-    <%= f.password_field :password %>
+    <%= f.password_field :password, class: 'form-control' %>
   </div>
+  <br>
   <div>
     <%= f.submit "log in" %>
   </div>
