@@ -4,37 +4,37 @@
 
     <div>
         <%= f.label :title %>
-        <%= f.text_field :title %>
+        <%= f.text_field :title, class: 'form-control' %>
     </div>
     <br>
     <div>
         <%= f.label :message %>
-        <%= f.text_area :message %>
+        <%= f.text_area :message, class: 'form-control' %>
     </div>
     <br>
     <div>
         <%= f.label :price %>
-        <%= f.text_field :price %>
+        <%= f.text_field :price, class: 'form-control' %>
     </div>
     <br>
     <div>
         <%= f.label :organic %>
-        <%= f.text_area :organic %>
+        <%= f.text_field :organic, class: 'form-control' %>
     </div>
     <br>
     <div>
         <%= f.label :location %>
-        <%= f.text_area :location %>
+        <%= f.text_field :location, class: 'form-control' %>
     </div>
     <br>
     <div>
         <%= f.label :phone %>
-        <%= f.text_area :phone %>
+        <%= f.text_field :phone, class: 'form-control' %>
     </div>
     <br>
     <div><h3>
         <%= f.label :image %>
-        <%= f.file_field :image %></h3>
+        <%= f.file_field :image, class: 'form-control' %></h3>
     </div>
 
     <%= f.submit "change this post now" %>
