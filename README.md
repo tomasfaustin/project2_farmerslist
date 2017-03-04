@@ -24,6 +24,8 @@ Just remember, everything is negotiable, so haggle away!
 
 *Postgresql
 
+*Heroku
+
 ##APPROACH
 
 I created two models--one for Users and one for Posts--that contain all of the information necessary to liaise between farmers and consumers. These models manage my data and databases.
