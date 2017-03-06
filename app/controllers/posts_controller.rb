@@ -9,6 +9,7 @@ class PostsController < ApplicationController
 # This allows for the search functionality in the nav bar
   def search
   @posts = Post.where("title ILIKE ? OR message ILIKE ? OR location ILIKE ?", "%#{params[:search]}%", "%#{params[:search]}%", "%#{params[:search]}%")
+    @message = "There aren't any posts about #{params[:search]}" if @posts.length == 0
     render 'index'
   end
 

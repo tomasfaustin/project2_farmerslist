@@ -2,7 +2,7 @@
 
 <strong><%= link_to "create a new post", new_post_path %></strong>
 <hr>
-
+  <%= @message if @message %>
 <ul>
     <% @posts.each do |post| %>
     <li>
